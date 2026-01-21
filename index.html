@@ -1,0 +1,42 @@
+<!doctypehtml>
+    <html lang=en>
+    <meta charset=UTF-8>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>reCAPTCHA: Human Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Share+Tech+Mono&display=swap"
+        rel=stylesheet>
+    <link href=style.css rel=stylesheet>
+    <div class=recaptcha-box id=captchaWidget>
+        <div class=spinner id=mainSpinner></div>
+        <div class=checkbox-container id=captchaClickTarget>
+            <div class=checkbox id=checkboxIcon></div>
+            <div class=label>I'm not a robot</div>
+        </div>
+        <div class=logo-container>
+            <div class=recaptcha-logo></div>
+            <div class=privacy-terms>reCAPTCHA<br>Privacy - Terms</div>
+        </div>
+    </div>
+    <div class=challenge-overlay id=modalOverlay>
+        <div class=challenge-box id=challengeBox>
+            <div class=challenge-header><strong>Verify physiological activity</strong> Please maintain sinus rhythm to
+                prove you are human.</div>
+            <div class=challenge-content>
+                <div class=status-container><span id=gameStatus>Initializing...</span> <span id=bpmDisplay
+                        class=bpm-display>--</span></div>
+                <div class=ecg-wrapper id=ecgWrapper><canvas height=200 id=ecgCanvas width=400></canvas>
+                    <div class=heart-overlay id=visualHeart>❤</div>
+                    <div class=flatline-text id=deadMsg>PATIENT DECEASED<br><span style=font-size:16px>VERIFICATION
+                            FAILED</span> <span id=restartHint class=restart-hint>Press SPACE or CLICK SHOCK to
+                            Revive</span></div>
+                </div>
+                <div class=controls-area><button class=btn-shock id=shockBtn><span>⚡</span> Defibrillate
+                        (Space)</button></div>
+            </div>
+            <div class=challenge-footer>
+                <div class=info-icon title="Keep the rhythm">ⓘ</div><button class=btn-verify
+                    id=verifyBtn>VERIFY</button>
+            </div>
+        </div>
+    </div>
+    <script src=game.js type=module></script>
